@@ -25,6 +25,81 @@
 ## Description
 
 [Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+This repository have already implemente the next features:
+- Nestify
+- Global class validation
+- Global guards
+- Decorators
+- Sequelize
+- Configuration service using yml files
+
+
+## Global class validation
+
+To implement a global class validation on an controller you must use decorators on the dto:
+```javascript
+import { IsEmail, IsNotEmpty } from 'class-validator';
+
+export class CreateUserDto {
+@IsEmail()
+email: string;
+
+@IsNotEmpty()
+password: string;
+}
+```
+
+## Global guards.
+
+Some guards were already implemented for convenience:
+
+- Role guard: Allow you to block controller actions base on a role
+```javascript
+@Post()
+@Roles(['admin', 'customer'])
+async create(@Body() createCatDto: CreateCatDto) {
+    this.catsService.create(createCatDto);
+}
+//If roles are not required we can ommit the guard
+@Post()
+async create(@Body() createCatDto: CreateCatDto) {
+    this.catsService.create(createCatDto);
+}
+```
+For this guard to work properly you must attach the user object to the user request (when user have logged) and
+you must specify which propertly of the user object to compare on the file */guards/roles.guard.ts* line 25
+##Decorators:
+
+Some common decorators have been implemented
+
+- Public: Will allow to have access to endpoints without being logged
+```javascript
+@Get()
+@Public()
+async findAll() {
+}
+```
+- User: Will give access to the user auth in on the endpoint
+```javascript
+@Post('stripe')
+  @Roles(Constants.groups.spectator)
+  async edit(@UserAuth() user : UserAuthEntity) {
+  }
+```
+
+## Configuration Service
+
+The configuration service has been implemented using yml files. You can have as many enviromental
+configuration files as you want. By default the *config-local.yml* was created.
+To create more copy the *config-local.yml* and on the same folder with another name such as
+config-development.yml and when you start nest you must attach the *NODE_ENV* var
+```bash
+NODE_ENV=development nest start
+```
+
+##Sequelize:
+
+Sequelize has been integrate. You must change the credentials on *config-local.yml*
 
 ## Installation
 
