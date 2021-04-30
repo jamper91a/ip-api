@@ -33,6 +33,7 @@ This repository have already implemente the next features:
 - Sequelize
 - Configuration service using yml files
 - Compression
+- Authentication with Passport
 
 
 ## Global class validation
@@ -101,6 +102,23 @@ NODE_ENV=development nest start
 ##Sequelize:
 
 Sequelize has been integrate. You must change the credentials on *config-local.yml*
+
+## Authentication with Passport
+ ###Local Authentication
+####Fields
+Local authentication implemented using passport.
+It will use a combination of **username/password** to validate. To change username for email or a different key, go to *auth/
+strategies/local.strategy*
+####Login
+To change the logic for validation (use a database, an external service, etc) go to *auth/auth.service.ts* and change the function validateUser
+
+```javascript 
+async validate(username: string, password: string): Promise<any> {
+    // Valida with database,etc
+    
+    return user;
+}
+```
 
 ## Installation
 
