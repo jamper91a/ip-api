@@ -119,6 +119,9 @@ async validate(username: string, password: string): Promise<any> {
     return user;
 }
 ```
+### Jwt Authentication
+All routes are validated using jwt, except for those who hace the decorator *@Public*.
+To change the logic review the file *auth/strategies/jwt.strategy*
 
 ## Installation
 
