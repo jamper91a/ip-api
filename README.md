@@ -32,6 +32,7 @@ This repository have already implemente the next features:
 - Decorators
 - Sequelize
 - Configuration service using yml files
+- Compression
 
 
 ## Global class validation
