@@ -34,6 +34,8 @@ This repository have already implemente the next features:
 - Configuration service using yml files
 - Compression
 - Authentication with Passport
+- Helmet Protection
+- Open Cli
 
 
 ## Global class validation
