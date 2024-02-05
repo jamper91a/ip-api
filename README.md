@@ -34,4 +34,12 @@ Includes:
 ### Add vars
 + To add a new var go to files in config/env and add the new name, value
 + Go to config/configuration.ts and add the new value there
+### Add environment
++ Create a new file in config/env/{name}.env
 
+
+## Database (Prisma)
+
++ Change database url in env/{name}.env
++ To create a migration: `dotenv -e config/env/local.env -- npx prisma migrate dev --name init`
++ To generate prisma files: `dotenv -e config/env/local.env -- npx prisma generate`
