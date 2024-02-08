@@ -1,4 +1,4 @@
-import { Injectable, UnauthorizedException } from '@nestjs/common';
+import {BadRequestException, Injectable, UnauthorizedException} from '@nestjs/common';
 import { PrismaService } from '../../prisma/prisma.service';
 import { User } from '@prisma/client';
 import { UsersService } from '../users/users.service';
@@ -11,7 +11,7 @@ export class AuthService {
   public async signIn(username: string, pass: string) {
     const user = await this.usersService.findOne(username);
     if (user?.password !== pass) {
-      throw new UnauthorizedException();
+      throw new BadRequestException('Username / password not valid');
     }
     const payload = { sub: user.id, email: user.email };
     return {
