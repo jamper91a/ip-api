@@ -11,6 +11,7 @@ import { RolesGuard } from './modules/auth/roles/roles.guard';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { RolesModule } from './modules/roles/roles.module';
 import { IpDataModule } from './modules/ip-data/ip-data.module';
+import { PlansModule } from './modules/plans/plans.module';
 @Module({
   imports: [
     ConfigModule.forRoot({
@@ -35,6 +36,7 @@ import { IpDataModule } from './modules/ip-data/ip-data.module';
     }),
     RolesModule,
     IpDataModule,
+    PlansModule,
   ],
   controllers: [AppController],
   providers: [
