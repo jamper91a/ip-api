@@ -12,6 +12,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { RolesModule } from './modules/roles/roles.module';
 import { IpDataModule } from './modules/ip-data/ip-data.module';
 import { PlansModule } from './modules/plans/plans.module';
+import { CustomersModule } from './modules/customers/customers.module';
 @Module({
   imports: [
     ConfigModule.forRoot({
@@ -37,6 +38,7 @@ import { PlansModule } from './modules/plans/plans.module';
     RolesModule,
     IpDataModule,
     PlansModule,
+    CustomersModule,
   ],
   controllers: [AppController],
   providers: [
