@@ -14,7 +14,7 @@ export class AuthService {
     if (user?.password !== pass) {
       throw new BadRequestException('Username / password not valid');
     }
-    const payload = { sub: user.id, email: user.email };
+    const payload = { sub: user.id, username: user.username };
     return {
       access_token: await this.jwtService.signAsync(payload),
     };

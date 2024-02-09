@@ -9,7 +9,7 @@ export class UsersService {
     @InjectRepository(User)
     private usersRepository: Repository<User>,
   ) {}
-  findOne(email: string): Promise<User | null> {
-    return this.usersRepository.findOne({ where: { email } });
+  findOne(username: string): Promise<User | null> {
+    return this.usersRepository.findOne({ where: { username } });
   }
 }
