@@ -10,6 +10,7 @@ import { APP_GUARD } from '@nestjs/core';
 import { RolesGuard } from './modules/auth/roles/roles.guard';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { RolesModule } from './modules/roles/roles.module';
+import { IpDataModule } from './modules/ip-data/ip-data.module';
 @Module({
   imports: [
     ConfigModule.forRoot({
@@ -33,6 +34,7 @@ import { RolesModule } from './modules/roles/roles.module';
       inject: [ConfigService],
     }),
     RolesModule,
+    IpDataModule,
   ],
   controllers: [AppController],
   providers: [
