@@ -1,4 +1,12 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
+import {
+  Controller,
+  Get,
+  Post,
+  Body,
+  Patch,
+  Param,
+  Delete,
+} from '@nestjs/common';
 import { IpDataService } from './ip-data.service';
 import { CreateIpDatumDto } from './dto/create-ip-datum.dto';
 import { UpdateIpDatumDto } from './dto/update-ip-datum.dto';

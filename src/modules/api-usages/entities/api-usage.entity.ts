@@ -1,5 +1,5 @@
-import {Entity, Column, PrimaryGeneratedColumn, ManyToOne} from 'typeorm';
-import {Customer} from "../../customers/entities/customer.entity";
+import { Entity, Column, PrimaryGeneratedColumn, ManyToOne } from 'typeorm';
+import { Customer } from '../../customers/entities/customer.entity';
 
 @Entity()
 export class ApiUsage {

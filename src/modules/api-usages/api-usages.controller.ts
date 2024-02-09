@@ -1,4 +1,12 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
+import {
+  Controller,
+  Get,
+  Post,
+  Body,
+  Patch,
+  Param,
+  Delete,
+} from '@nestjs/common';
 import { ApiUsagesService } from './api-usages.service';
 import { CreateApiUsageDto } from './dto/create-api-usage.dto';
 import { UpdateApiUsageDto } from './dto/update-api-usage.dto';
@@ -23,7 +31,10 @@ export class ApiUsagesController {
   }
 
   @Patch(':id')
-  update(@Param('id') id: string, @Body() updateApiUsageDto: UpdateApiUsageDto) {
+  update(
+    @Param('id') id: string,
+    @Body() updateApiUsageDto: UpdateApiUsageDto,
+  ) {
     return this.apiUsagesService.update(+id, updateApiUsageDto);
   }
 
