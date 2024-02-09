@@ -3,10 +3,11 @@ import {
   Column,
   PrimaryGeneratedColumn,
   OneToOne,
-  JoinColumn,
+  JoinColumn, OneToMany,
 } from 'typeorm';
 import { User } from '../../users/entities/user.entity';
 import { Plan } from '../../plans/entities/plan.entity';
+import {ApiUsage} from "../../api-usages/entities/api-usage.entity";
 
 @Entity()
 export class Customer {
@@ -35,4 +36,7 @@ export class Customer {
   @OneToOne(() => Plan)
   @JoinColumn()
   plan: Plan;
+
+  @OneToMany(() => ApiUsage, (apiUsage) => apiUsage.customer)
+  apiUsages: ApiUsage[];
 }

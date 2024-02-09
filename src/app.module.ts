@@ -13,6 +13,7 @@ import { RolesModule } from './modules/roles/roles.module';
 import { IpDataModule } from './modules/ip-data/ip-data.module';
 import { PlansModule } from './modules/plans/plans.module';
 import { CustomersModule } from './modules/customers/customers.module';
+import { ApiUsagesModule } from './modules/api-usages/api-usages.module';
 @Module({
   imports: [
     ConfigModule.forRoot({
@@ -39,6 +40,7 @@ import { CustomersModule } from './modules/customers/customers.module';
     IpDataModule,
     PlansModule,
     CustomersModule,
+    ApiUsagesModule,
   ],
   controllers: [AppController],
   providers: [
