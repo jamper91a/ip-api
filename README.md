@@ -38,8 +38,5 @@ Includes:
 + Create a new file in config/env/{name}.env
 
 
-## Database (Prisma)
+## Database (TypeOrm)
 
-+ Change database url in env/{name}.env
-+ To create a migration: `dotenv -e config/env/local.env -- npx prisma migrate dev --name init`
-+ To generate prisma files: `dotenv -e config/env/local.env -- npx prisma generate`
