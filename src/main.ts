@@ -5,6 +5,7 @@ import { ValidationPipe } from '@nestjs/common';
 import * as compression from 'compression';
 import helmet from 'helmet';
 async function bootstrap() {
+  console.log('Boostrap app');
   const app = await NestFactory.create(AppModule);
 
   const configService = app.get(ConfigService);
