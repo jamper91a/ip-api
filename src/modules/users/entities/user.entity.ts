@@ -6,8 +6,14 @@ export class User {
   id: number;
 
   @Column()
-  email: string;
+  username: string;
 
   @Column()
   password: string;
+
+  @Column({ type: 'timestamp', default: () => 'CURRENT_TIMESTAMP' })
+  created: Date;
+
+  @Column()
+  updated: Date;
 }
