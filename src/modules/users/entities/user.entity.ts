@@ -1,4 +1,5 @@
-import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
+import {Entity, Column, PrimaryGeneratedColumn, OneToOne, JoinColumn} from 'typeorm';
+import {Role} from "../../roles/entities/role.entity";
 
 @Entity()
 export class User {
@@ -16,4 +17,8 @@ export class User {
 
   @Column()
   updated: Date;
+
+  @OneToOne(() => Role)
+  @JoinColumn()
+  role: Role;
 }

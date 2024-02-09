@@ -9,6 +9,7 @@ import { AuthGuard } from './modules/auth/auth.guard';
 import { APP_GUARD } from '@nestjs/core';
 import { RolesGuard } from './modules/auth/roles/roles.guard';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { RolesModule } from './modules/roles/roles.module';
 @Module({
   imports: [
     ConfigModule.forRoot({
@@ -31,6 +32,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
       }),
       inject: [ConfigService],
     }),
+    RolesModule,
   ],
   controllers: [AppController],
   providers: [
